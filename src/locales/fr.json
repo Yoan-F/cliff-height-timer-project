@@ -1,0 +1,11 @@
+{
+  "message": "hello i18n !!",
+  "title": "Calcul de la hauteur d'une falaise",
+  "About" : "A Propos",
+  "description" : "Il s'agit d'une application très simple qui utilise la physique de base pour vous dire la hauteur d'une falaise ou la profondeur d'un puits. Tout ce que vous avez à faire, c'est de compter le temps qu'il faut pour que l'objet lancé touche le sol. Laissé l'application calculer faire le reste ;)",
+  "drawer.home" : "Acceuil",
+  "drawer.history" : "Historique",
+  "drawer.about" : "Aide",
+  "title-history": "Liste des historiques",
+  "history.noHistory": "Il n'y a pas d'historique, veuillez vous rendre sur la page d'accueil pour commencer."
+}

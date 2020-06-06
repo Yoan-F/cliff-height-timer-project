@@ -1,0 +1,11 @@
+{
+  "message": "hello i18n !!",
+  "title": "Cliff Height Timer",
+  "About": "About",
+  "description" : "This is a very simple application that uses basic physics to tell you the height of a cliff or the depth of a well. All you have to do is count the time it takes for the object you throw to hit the ground. Let the calculator do the rest ;)",
+  "drawer.home" : "Home",
+  "drawer.history" : "History",
+  "drawer.about" : "Help",
+  "title-history" : "Historic list",
+  "history.noHistory" : "There is no history, please go to the home page to get started."
+}
