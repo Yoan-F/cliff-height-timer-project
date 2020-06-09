@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from "../views/About";
 import History from "../views/History";
+import Map from "../views/Map";
 
 Vue.use(VueRouter);
 
@@ -21,7 +22,12 @@ Vue.use(VueRouter);
       path: '/history',
       name: 'History',
       component: History
-    }
+    },
+    {
+      path: '/map',
+      name: 'map',
+      component: Map
+    },
 
 ];
 

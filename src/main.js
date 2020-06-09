@@ -1,8 +1,11 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from 'vue';
+import App from './App.vue';
 import vuetify from './plugins/vuetify';
-import router from './router'
-import i18n from './i18n'
+import router from './router';
+import i18n from './i18n';
+import "./plugins/vue2-leaflet";
+import "./plugins/firebase";
+import "./plugins/vuefire";
 
 Vue.config.productionTip = false
 
