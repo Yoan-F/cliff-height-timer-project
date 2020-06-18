@@ -3,9 +3,8 @@ import App from './App.vue';
 import vuetify from './plugins/vuetify';
 import router from './router';
 import i18n from './i18n';
-import "./plugins/vue2-leaflet";
-import "./plugins/firebase";
-import "./plugins/vuefire";
+import * as firebase from "firebase";
+import store from "./store";
 
 Vue.config.productionTip = false
 
@@ -15,3 +14,20 @@ new Vue({
   i18n,
   render: h => h(App)
 }).$mount('#app')
+
+const configOptions = {
+  apiKey: "AIzaSyAm0iSsXhtciuqpV-_OoQoNpp2VV7BLZjc",
+  authDomain: "vue-firebase-auth-3fdc4.firebaseapp.com",
+  databaseURL: "https://vue-firebase-auth-3fdc4.firebaseio.com",
+  projectId: "vue-firebase-auth-3fdc4",
+  storageBucket: "vue-firebase-auth-3fdc4.appspot.com",
+  messagingSenderId: "1001064612360",
+  appId: "1:1001064612360:web:aad4dc53dffce111ce07bd",
+  measurementId: "G-8XT5NY4K8Z"
+};
+
+firebase.initializeApp(configOptions);
+
+firebase.auth().onAuthStateChanged(user => {
+  store.dispatch("fetchUser", user);
+});

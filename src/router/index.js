@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from "../views/About";
 import History from "../views/History";
-import Map from "../views/Map";
+import Login from '../components/Login'
+import Register from '../components/Register'
 
 Vue.use(VueRouter);
 
@@ -24,10 +25,16 @@ Vue.use(VueRouter);
       component: History
     },
     {
-      path: '/map',
-      name: 'map',
-      component: Map
+      path: '/register',
+      name: 'Register',
+      component: Register
     },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
+    },
+
 
 ];
 
