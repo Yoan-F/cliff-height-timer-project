@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
-                        <form action="#" @submit.prevent="submit">
+                        <form @submit.prevent="submit" action="#">
                             <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
 
@@ -100,7 +100,8 @@
                             .updateProfile({
                                 displayName: this.form.name
                             })
-                            .then(() => {this.$router.replace('/')});
+                            .then(() => {
+                                this.$router.replace('/')});
                     })
                     .catch(err => {
                         this.error = err.message;

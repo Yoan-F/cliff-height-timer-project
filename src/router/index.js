@@ -3,8 +3,9 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import About from "../views/About";
 import History from "../views/History";
-import Login from '../components/Login'
-import Register from '../components/Register'
+import Login from '../components/Login';
+import Register from '../components/Register';
+import Dashboard from '../components/Dashboard';
 
 Vue.use(VueRouter);
 
@@ -34,6 +35,11 @@ Vue.use(VueRouter);
       name: 'Login',
       component: Login
     },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
+    }
 
 
 ];
