@@ -101,7 +101,7 @@
                                 displayName: this.form.name
                             })
                             .then(() => {
-                                this.$router.replace('/')});
+                                this.$router.replace('/login')});
                     })
                     .catch(err => {
                         this.error = err.message;

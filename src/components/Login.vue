@@ -74,13 +74,15 @@
             goRegister(){
                 this.$router.replace('/register')
             },
-            submit() {
+            submit: function () {
                 firebase
                     .auth()
                     .signInWithEmailAndPassword(this.form.email, this.form.password)
-                    // eslint-disable-next-line no-unused-vars
-                    .then(data => {
+                    .then(data=> {
+                        //pb sur le data faire un data.(set loggin en true ici je pense)
+                        console.log(data);
                         this.$router.replace('/');
+                        console.log("ok router");
                     })
                     .catch(err => {
                         this.error = err.message;

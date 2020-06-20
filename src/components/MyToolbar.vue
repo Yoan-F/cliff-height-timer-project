@@ -25,7 +25,6 @@
                 <v-btn small @click="goLogin" color="purple">Login</v-btn>
                 <v-btn small @click="goRegister" color="purple">Register</v-btn>
             </div>
-
         </v-app-bar>
     </div>
 </template>

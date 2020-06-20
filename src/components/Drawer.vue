@@ -13,23 +13,8 @@
                     </v-list-item-content>
                 </v-list-item>
             </template>
-            <!--<template>
-                <div class="nav-item" v-if="user.loggedIn">
-                    <div class="nav-item">{{user.data.displayName}}</div>
-                    <li class="nav-item">
-                        <a class="nav-link" @click.prevent="signOut">Sign out</a>
-                    </li>
-                </div>
-                <div class="nav-item" v-else>
-                    <li class="nav-item">
-                        <router-link to="login" class="nav-link">Login</router-link>
-                    </li>
-                    <li class="nav-item">
-                        <router-link to="register" class="nav-link">Register</router-link>
-                    </li>
-                </div>
-            </template>-->
-        </v-list> </div>
+        </v-list>
+    </div>
 </template>
 
 <script>
