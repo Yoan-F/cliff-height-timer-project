@@ -1,4 +1,4 @@
-<template v-if="user.loggedIn">
+<template>
     <div>
         <v-navigation-drawer v-model="drawer" clipped fixed app>
             <myContentDrawer />
@@ -6,49 +6,44 @@
         <v-app-bar dark color="deep-purple" clipped-left app>
             <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             <v-toolbar-title @click="goHome" class="white--text">{{$t("title")}}</v-toolbar-title>
-            <div class="my-2" >
+            <div class="my-2" v-if="loggedIn">
                 <v-btn @click.prevent="signOut" small color="purple">SignOut</v-btn>
             </div>
-
-        </v-app-bar>
-    </div>
-</template>
-<template v-else>
-    <div>
-        <v-navigation-drawer v-model="drawer" clipped fixed app>
-            <myContentDrawer />
-        </v-navigation-drawer>
-        <v-app-bar dark color="deep-purple" clipped-left app>
-            <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            <v-toolbar-title @click="goHome" class="white--text">{{$t("title")}}</v-toolbar-title>
-            <div class="my-2" >
+            <div v-else class="my-2" >
                 <v-btn small @click="goLogin" color="purple">Login</v-btn>
                 <v-btn small @click="goRegister" color="purple">Register</v-btn>
             </div>
+
         </v-app-bar>
     </div>
 </template>
 
 <script>
-    import { mapGetters } from "vuex";
-    import firebase from "firebase";
+    import * as firebase from "firebase/app";
+    import "firebase/auth";
     import myContentDrawer from "@/components/Drawer";
+
     export default {
         name: 'myToolbar',
         components: {myContentDrawer},
         data: function () {
             return {
-                drawer: false
+                drawer: false,
+                loggedIn: false
             }
         },
+        mounted() {
+            this.setupFirebase();
+        },
         methods: {
-            goLogin(){
+            goLogin() {
                 this.$router.replace('/login')
+                console.log(this.login)
             },
-            goRegister(){
+            goRegister() {
                 this.$router.replace('/register')
             },
-            goHome () {
+            goHome() {
                 this.$router.replace('/')
             },
             signOut() {
@@ -58,13 +53,20 @@
                     .then(() => {
                         this.$router.replace('/');
                     });
-            }
-        },
-        computed: {
-            ...mapGetters({
-                // map `this.user` to `this.$store.getters.user`
-                user: "user"
-            })
-        },
+            },
+            setupFirebase() {
+                firebase.auth().onAuthStateChanged(user => {
+                    if (user) {
+                        // User is signed in.
+                        console.log("signed in");
+                        this.loggedIn = true;
+                    } else {
+                        // No user is signed in.
+                        this.loggedIn = false;
+                        console.log("signed out", this.loggedIn);
+                    }
+                });
+            },
+        }
     }
 </script>

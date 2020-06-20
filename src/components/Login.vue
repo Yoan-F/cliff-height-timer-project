@@ -44,6 +44,7 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
+                                    <!--$@click="//faire une méthode pour changer le login dans toolbar en true"-->
                                     <v-btn type="submit" depressed small>Login</v-btn>
                                     <v-btn @click="goRegister" depressed small>Register</v-btn>
                                 </div>
@@ -57,8 +58,8 @@
 </template>
 
 <script>
-    import firebase from "firebase";
-
+    import * as firebase from "firebase/app";
+    import "firebase/auth";
     export default {
         name: "login",
         data() {
@@ -67,7 +68,7 @@
                     email: "",
                     password: ""
                 },
-                error: null
+                error: null,
             };
         },
         methods: {
@@ -79,10 +80,8 @@
                     .auth()
                     .signInWithEmailAndPassword(this.form.email, this.form.password)
                     .then(data=> {
-                        //pb sur le data faire un data.(set loggin en true ici je pense)
                         console.log(data);
                         this.$router.replace('/');
-                        console.log("ok router");
                     })
                     .catch(err => {
                         this.error = err.message;

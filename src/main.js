@@ -4,16 +4,15 @@ import vuetify from './plugins/vuetify';
 import router from './router';
 import i18n from './i18n';
 import * as firebase from "firebase";
-import store from "./store";
 
 Vue.config.productionTip = false
 
-new Vue({
+/*new Vue({
   vuetify,
   router,
   i18n,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app')*/
 
 const configOptions = {
   apiKey: "AIzaSyAm0iSsXhtciuqpV-_OoQoNpp2VV7BLZjc",
@@ -28,6 +27,16 @@ const configOptions = {
 
 firebase.initializeApp(configOptions);
 
+let app;
+
 firebase.auth().onAuthStateChanged(user => {
-  store.dispatch("fetchUser", user);
+  console.log("user", user);
+  if (!app) {
+    new Vue({
+      vuetify,
+      router,
+      i18n,
+      render: h => h(App)
+    }).$mount('#app');
+  }
 });
