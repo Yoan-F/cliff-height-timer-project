@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="v-card">
                     <div class="card-header">
-                        <h1>Login</h1>
+                        <h1>{{ $t("login") }}</h1>
                     </div>
                     <div class="card-body">
                         <div v-if="error" class="alert alert-danger">{{error}}</div>
@@ -21,13 +21,13 @@
                                             required
                                             autofocus
                                             v-model="form.email"
-                                            placeholder="Your email"
+                                            placeholder="Your Email"
                                     />
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                                <label for="password" class="col-md-4 col-form-label text-md-right">{{$t("Password")}}</label>
 
                                 <div class="col-md-6">
                                     <input
@@ -37,16 +37,15 @@
                                             name="password"
                                             required
                                             v-model="form.password"
-                                            placeholder="Your password"
+                                            placeholder="Your Password"
                                     />
                                 </div>
                             </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <!--$@click="//faire une méthode pour changer le login dans toolbar en true"-->
-                                    <v-btn type="submit" depressed small>Login</v-btn>
-                                    <v-btn @click="goRegister" depressed small>Register</v-btn>
+                                    <v-btn type="submit" depressed small>{{ $t("login") }}</v-btn>
+                                    <v-btn @click="goRegister" depressed small>{{ $t("register") }}</v-btn>
                                 </div>
                             </div>
                         </form>

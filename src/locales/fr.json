@@ -7,5 +7,13 @@
   "drawer.history" : "Historique",
   "drawer.about" : "Aide",
   "title-history": "Liste des historiques",
-  "history.noHistory": "Il n'y a pas d'historique, veuillez vous rendre sur la page d'accueil pour commencer."
+  "history.noHistory": "Il n'y a pas d'historique, veuillez vous rendre sur la page d'accueil pour commencer.",
+  "login": "Connexion",
+  "signout": "Déconnexion",
+  "register": "Inscription",
+  "name": "Nom",
+  "YourName": "Votre Nom",
+  "YourEmail": "Votre Email",
+  "Password": "Mot de passe",
+  "YourPassword": "Votre mot de passe"
 }

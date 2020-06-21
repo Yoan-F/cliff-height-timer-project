@@ -7,5 +7,13 @@
   "drawer.history" : "History",
   "drawer.about" : "Help",
   "title-history" : "Historic list",
-  "history.noHistory" : "There is no history, please go to the home page to get started."
+  "history.noHistory" : "There is no history, please go to the home page to get started.",
+  "login": "Login",
+  "register": "Register",
+  "signout": "SignOut",
+  "name": "Name",
+  "YourName":"Your name",
+  "YourEmail":"Your email",
+  "Password": "Password",
+  "YourPassword": "Your password"
 }
