@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=DEV vue-cli-service serve & sleep 5 && NODE_ENV=DEV electron app.js",
-    "start": "vue-cli-service serve",
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
@@ -13,8 +13,10 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "electron": "^9.0.4",
+    "express": "^4.17.1",
     "firebase": "^7.15.1",
     "leaflet": "^1.6.0",
+    "serve-static": "^1.14.1",
     "vue": "^2.6.11",
     "vue-i18n": "^8.17.3",
     "vue-router": "^3.3.4",
