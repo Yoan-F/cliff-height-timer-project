@@ -2,9 +2,9 @@ module.exports = {
   "transpileDependencies": [
     "vuetify"
   ],
-  devServer: {
+/*  devServer: {
     disableHostCheck: true
-  },
+  },*/
 
   pluginOptions: {
     i18n: {
