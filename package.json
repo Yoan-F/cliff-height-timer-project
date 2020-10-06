@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "electron": "^9.0.4",
+    "electron": "^9.3.0",
     "express": "^4.17.1",
     "firebase": "^7.15.1",
     "leaflet": "^1.6.0",
